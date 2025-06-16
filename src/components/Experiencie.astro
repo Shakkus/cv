@@ -8,7 +8,14 @@ const experiencies = [
       "Design and development of a web application designed to monitor and manage studies performed at partner clinics.",
       "Maintenance and customize third-party applications to meet company needs.",
     ],
-    techStack: ["React Js", "Redux Toolkit", "Material UI"],
+    techStack: [
+      "React Js",
+      "Redux Toolkit",
+      "Material UI",
+      "Vitest",
+      "Cypress",
+      "React-Testing-Library",
+    ],
     estado: " 2023 Oct. - Currently working here 👈🏻",
   },
   {
@@ -18,7 +25,7 @@ const experiencies = [
       "Design and development of a web application to manage shifts and orders.",
       "In charge of the feedback from the client about de application.",
     ],
-    techStack: ["React Js", "Zustand", "ShadCn", "Nest Js"],
+    techStack: ["React Js", "Zustand", "ShadCn", "Nest Js", "Cypress"],
     estado: "In Development",
   },
   {
@@ -56,9 +63,11 @@ const experiencies = [
               return <li class=""> {logro}</li>;
             })}
           </div>
-          <div class="flex flex-wrap">{experiencia.techStack?.map((tech) => {
-            return <span class="text-violet-500 mx-3">{tech}</span>
-          })}</div>
+          <div class="flex flex-wrap">
+            {experiencia.techStack?.map((tech) => {
+              return <span class="text-violet-500 mx-3">{tech}</span>;
+            })}
+          </div>
 
           <p class="font-thin">{experiencia.estado}</p>
         </div>
