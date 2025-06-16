@@ -1,0 +1,12 @@
+@tailwind utilities;
+
+@import "tailwindcss";
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(19, 19, 19);
+  color: rgb(228, 228, 228);
+  margin: 0;
+  width: 100%;
+}

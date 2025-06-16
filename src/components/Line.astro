@@ -1,0 +1,39 @@
+---
+const labels = [
+  "Based in Argentina",
+  "+2 Years of Experience",
+  "Open to collaborate",
+];
+---
+
+<div class="overflow-hidden border-t border-b bg-violet-800 text-black py-3">
+  <div class="scroll-line text-lg font-medium flex gap-8 px-4">
+    {
+      labels.map((label, index) =>
+        [...labels, ...labels].map((label, index) => (
+          <div key={index}>{label}</div>
+        ))
+      )
+    }
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .scroll-line {
+    animation: scroll 15s linear infinite;
+    white-space: nowrap;
+  }
+
+  .scroll-line:hover {
+    animation-play-state: paused;
+  }
+</style>

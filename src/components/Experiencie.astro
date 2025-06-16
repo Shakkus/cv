@@ -1,0 +1,68 @@
+---
+const experiencies = [
+  {
+    puesto: "Frontend Developer",
+    nombre: "BioBoxMed",
+    link: "https://bioboxmed.com/site/",
+    logro: [
+      "Design and development of a web application designed to monitor and manage studies performed at partner clinics.",
+      "Maintenance and customize third-party applications to meet company needs.",
+    ],
+    techStack: ["React Js", "Redux Toolkit", "Material UI"],
+    estado: " 2023 Oct. - Currently working here 👈🏻",
+  },
+  {
+    puesto: "Full-Stack Developer",
+    nombre: "Hegoren WebSite",
+    logro: [
+      "Design and development of a web application to manage shifts and orders.",
+      "In charge of the feedback from the client about de application.",
+    ],
+    techStack: ["React Js", "Zustand", "ShadCn", "Nest Js"],
+    estado: "In Development",
+  },
+  {
+    puesto: "Frontend Developer",
+    link: "https://entre-copas.vercel.app/",
+    nombre: "Entre Copas",
+    logro: [
+      "Despliegue de aplicacion en servidor Vercel",
+      "Creacion de servidor de prueba y de produccion",
+    ],
+    techStack: ["React Js"],
+    estado: "Finalizado",
+  },
+];
+---
+
+<div class="text-center mx-24">
+  <h2 class="text-3xl my-10">My experiencie</h2>
+  {
+    experiencies.map((experiencia) => {
+      return (
+        <div class="border-2 border-violet-800 rounded-2xl my-5 text-start p-8 ">
+          <p class="font-bold text-lg text-violet-500 mb-2">
+            {experiencia.puesto}
+          </p>
+          <p>{experiencia.nombre}</p>
+          {experiencia.link && (
+            <a href={experiencia.link} target="_blank">
+              Visitar <span class="text-violet-500">{experiencia.nombre}</span>
+            </a>
+          )}
+
+          <div class="mt-3 pt-3 border-violet-50 border-t-2">
+            {experiencia.logro?.map((logro) => {
+              return <li class=""> {logro}</li>;
+            })}
+          </div>
+          <div class="flex flex-wrap">{experiencia.techStack?.map((tech) => {
+            return <span class="text-violet-500 mx-3">{tech}</span>
+          })}</div>
+
+          <p class="font-thin">{experiencia.estado}</p>
+        </div>
+      );
+    })
+  }
+</div>
