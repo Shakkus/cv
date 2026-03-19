@@ -1,0 +1,109 @@
+---
+const experiences = [
+  {
+    puesto: "Frontend Developer",
+    nombre: "Midas Consultores",
+    link: "https://midasconsultores.com/",
+    logro: [
+      "Development and maintenance of web applications using Next.js.",
+      "Implementation of styling using SCSS and component-based architecture.",
+      "Collaboration within Agile teams and version control using GitHub.",
+    ],
+    techStack: ["Next.js", "SCSS", "GitHub", "Agile"],
+    estado: "Present 👈🏻",
+  },
+  {
+    puesto: "Analyst Programmer",
+    nombre: "BioBoxMed",
+    link: "https://bioboxmed.com/site/",
+    logro: [
+      "Design and planning of functionalities.",
+      "Time estimation and priority on tickets.",
+      "Accessibility analysis of applications.",
+    ],
+    techStack: ["React Js", "Jira", "GitLab", "Gitflow"],
+    estado: "Aug 2025 - Oct 2025",
+  },
+  {
+    puesto: "Frontend Developer",
+    nombre: "BioBoxMed",
+    link: "https://bioboxmed.com/site/",
+    logro: [
+      "Design and development of a web application designed to monitor and manage studies performed at partner clinics.",
+      "Maintenance and customization of third-party applications to meet company needs.",
+    ],
+    techStack: [
+      "React Js",
+      "Redux Toolkit",
+      "Material UI",
+      "Vitest",
+      "Cypress",
+      "React-Testing-Library",
+    ],
+    estado: "Oct 2023 - Aug 2025",
+  },
+  {
+    puesto: "Frontend Developer",
+    link: "https://entre-copas.vercel.app/",
+    nombre: "Entre Copas",
+    logro: [
+      "Application deployed on Vercel.",
+      "Maintained and fixed features for various user groups.",
+    ],
+    techStack: ["React Js"],
+    estado: "Finished",
+  },
+];
+---
+
+<section id="experience" class="text-center mx-10 sm:mx-24 my-20">
+  <h2 class="text-3xl my-10 font-bold text-violet-800 dark:text-violet-400">
+    My Experience
+  </h2>
+  <div class="flex flex-col gap-6">
+    {
+      experiences.map((experiencia, index) => {
+        return (
+          <article class="m-auto border-2 border-violet-800 dark:border-violet-600 rounded-2xl text-start p-8 max-w-3xl w-full shadow-md hover:shadow-lg transition-shadow">
+            <h3 class="font-bold text-2xl text-violet-600 dark:text-violet-400 mb-1">
+              {experiencia.puesto}
+            </h3>
+            <p class="text-lg font-medium mb-3">{experiencia.nombre}</p>
+            {experiencia.link && (
+              <a
+                href={experiencia.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mb-4 text-violet-500 hover:text-violet-700 hover:underline transition-colors"
+              >
+                Visit <span class="font-semibold">{experiencia.nombre}</span>
+              </a>
+            )}
+
+            <div class="mt-3 pt-4 border-t-2 border-violet-100 dark:border-violet-900/30">
+              <ul class="list-disc list-inside space-y-2 mb-6">
+                {experiencia.logro?.map((logro, i) => {
+                  return <li class="text-gray-700 dark:text-gray-300">{logro}</li>;
+                })}
+              </ul>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              {experiencia.techStack?.map((tech, i) => {
+                return (
+                  <span class="bg-violet-100 dark:bg-violet-900/50 text-violet-800 dark:text-violet-300 px-3 py-1 rounded-full text-sm font-medium">
+                    {tech}
+                  </span>
+                );
+              })}
+            </div>
+
+            <p class="font-light text-sm text-gray-500 dark:text-gray-400">
+              {experiencia.estado}
+            </p>
+          </article>
+        );
+      })
+    }
+  </div>
+</section>

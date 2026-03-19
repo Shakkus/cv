@@ -1,18 +1,23 @@
 ---
-import Experiencie from "../components/Experiencie.astro";
+import Experience from "../components/Experience.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Line from "../components/Line.astro";
 import Skills from "../components/Skills.astro";
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Portfolio de Sebastian Albornoz
 ---
 
 <Layout>
-  <Welcome />
-  <Line />
-  <Skills />
-  <Experiencie />
+  <Header />
+  <main class="pt-28"> <!-- Compensa el header y da aire a la foto -->
+    <Welcome />
+    <Line />
+    <Skills />
+    <Experience />
+  </main>
+  <Footer />
 </Layout>

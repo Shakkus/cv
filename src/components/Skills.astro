@@ -1,33 +1,48 @@
 ---
-const skills = [
-  "Html",
-  "Css",
-  "Javascript",
-  "Typescript",
-  "React Js",
-  "Next Js",
-  "Vue Js",
-  "Astro",
-  "Nest Js",
-  "Tailwind Css",
-  "Material UI",
-  "Styled Components",
-  "Vite",
-  "Jest",
-  "Vitest",
-  "Testing-Library",
-  "Cypress",
+// Agrupamos skills para darle una estructura mucho más legible y profesional
+const skillCategories = [
+  {
+    title: "Frontend & Core",
+    skills: ["Html", "Css", "Javascript", "Typescript", "React Js", "Next Js", "Vue Js", "Astro"],
+  },
+  {
+    title: "Testing & QA",
+    skills: ["Jest", "Vitest", "Cypress", "Testing-Library"],
+  },
+  {
+    title: "Styling & UI",
+    skills: ["Tailwind Css", "Material UI", "Styled Components"],
+  },
+  {
+    title: "Backend & Tools",
+    skills: ["Nest Js", "Vite", "Git", "Gitflow"],
+  }
 ];
 ---
 
-<div class="text-center mx-10 sm:mx-24">
-  <h2 class="text-3xl my-10">My skills</h2>
-  <div class="flex justify-around flex-wrap sm:max-w-200 sm:m-auto">
+<section id="skills" class="mx-10 sm:mx-24 my-16">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold mb-10 text-violet-800 dark:text-violet-400">
+      My Skills
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
     {
-      skills.map((skill) => {
-        return <div 
-        class="cursor-pointer font-bold border-2 p-2 rounded-md m-2 transition-all hover:bg-violet-800 hover:text-black hover:border-0">{skill}</div>;
-      })
+      skillCategories.map((category) => (
+        <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold mb-4 text-violet-600 dark:text-violet-300 border-b pb-2 border-violet-100 dark:border-violet-900/50">
+            {category.title}
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            {category.skills.map((skill) => (
+              <span class="cursor-default font-medium border-2 border-violet-200 dark:border-violet-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 px-3 py-1.5 rounded-lg text-sm transition-all hover:bg-violet-800 hover:text-white hover:border-violet-800 shadow-sm">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))
     }
   </div>
-</div>
+</section>

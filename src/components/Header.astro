@@ -1,0 +1,59 @@
+---
+const navItems = [
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Experience", href: "#experience" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-violet-100 dark:border-gray-800 transition-colors"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo/Name -->
+      <div class="flex-shrink-0">
+        <a
+          href="#"
+          class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-violet-800 dark:from-violet-400 dark:to-violet-600"
+        >
+          Seba.dev
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-gray-600 hover:text-violet-600 dark:text-gray-300 dark:hover:text-violet-400 font-medium transition-colors"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA / Extra -->
+      <div class="hidden md:block">
+        <a
+          href="mailto:sebadevalbornoz@gmail.com"
+          class="text-sm font-medium border border-violet-200 dark:border-violet-700 text-violet-700 dark:text-violet-300 px-4 py-2 rounded-full hover:bg-violet-50 dark:hover:bg-violet-900/30 transition-colors"
+        >
+          Let's talk
+        </a>
+      </div>
+
+      <!-- Mobile menu button (Simplified for now, CSS handles simple hide/show) -->
+      <div class="md:hidden flex items-center">
+        <a href="#skills" class="text-sm font-medium text-violet-600 mr-4">Skills</a>
+        <a href="#experience" class="text-sm font-medium text-violet-600">Exp</a>
+      </div>
+    </div>
+  </div>
+</header>
